@@ -6,13 +6,12 @@
 
     </div>
 
-    <div class="container d-flex justify-content-center">
-        <div class="row">
-          <div class="col-md-12">
-            <HelloWorld />
-          </div>
-        </div>
-      </div>
+    <div class="">
+
+      <HelloWorld />
+    </div>
+    
+    
     
   </div>
 </template>
