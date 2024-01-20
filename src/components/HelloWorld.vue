@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1 class="text-light fw-bold ">Probando {{ texto }}</h1>
+    <h1 class="text-light fw-bold " v-text="'Probando ' + texto"></h1>
 
     <input type="text" v-model="texto"> 
     
