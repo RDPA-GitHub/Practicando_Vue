@@ -1,7 +1,8 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h5>{{ texto }}</h5>
+    <h1 class="text-light fw-bold ">Probando {{ texto }}</h1>
+
+    <input type="text" v-model="texto"> 
     
   </div>
 </template>
@@ -9,12 +10,9 @@
 <script>
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String
-  }, 
   data (){
     return {
-      texto : "Probando la funcion data"
+      texto : "VUE"
     }
   }
 }
