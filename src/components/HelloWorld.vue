@@ -15,7 +15,7 @@
           <div  class=" mb-4 d-flex justify-content-center align-items-center " >
 
             <input type="text" class="form-control w-25 me-2" v-model="texto">
-            <button class="btn btn-success fw-bold fs-5 py-1" @click = "texto = texto.split('').reverse().join('')">+</button>
+            <button class="btn btn-success fw-bold fs-5 py-1" @click = "reverse">+</button>
           </div>
 
 
@@ -67,6 +67,11 @@ export default {
           completed: false
         }
       ]
+    }
+  },
+  methods: {
+    reverse : function( ) {
+      this.texto = this.texto.split('').reverse().join('')
     }
   }
 }
