@@ -15,7 +15,11 @@
     </h2>
 
     <ol class="text-light">
-      <li v-for="(tarea, i) in tareas" :key="i" v-text="tarea"></li>
+      <li v-for="({title, completed}, i) in tareas" :key="i">
+        <span v-text="title"></span>
+        <small v-if="completed" class="text-success fw-bold"> -> Completa 😃</small>
+        <small v-else class="text-danger fw-bold"> -> Incompleta 🫣</small>
+      </li>
     </ol>
     
   </div>
@@ -29,9 +33,18 @@ export default {
       texto : "VUE",
       tareas: [
         
-        "Aprender PHP",
-        "Aprender Laravel",
-        "Aprender Vue js"
+        {
+          title : "Aprender PHP",
+          completed : true
+        },
+        {
+          title : "Aprender Laravel",
+          completed : true
+        },
+        {
+          title : "Aprender Vue js",
+          completed : false
+        }
       ]
     }
   }
