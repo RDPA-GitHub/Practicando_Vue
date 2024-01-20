@@ -14,8 +14,8 @@
 
           <div  class=" mb-4 d-flex justify-content-center align-items-center " >
 
-            <input type="text" class="form-control w-25 me-2" v-model="texto">
-            <button class="btn btn-success fw-bold fs-5 py-1" @click = "reverse">+</button>
+            <input type="text" class="form-control w-25 me-2" v-model="newTasks">
+            <button @click="addTask" class="btn btn-success fw-bold fs-5 py-1">+</button>
           </div>
 
 
@@ -23,9 +23,9 @@
             Listas de Tareas
           </h2>
 
-          <div class="d-flex justify-content-center ">
-            <ol class="text-light ">
-              <li v-for="({ title, completed }, i) in tareas" :key="i">
+          <div class="d-flex justify-content-center">
+            <ol class="text-light">
+              <li class="fw-bold" v-for="({ title, completed }, i) in tasks" :key="i">
                 <span v-text="title"></span>
                 <small v-if="completed" class="text-success fw-bold"> -> Completa 😃</small>
                 <small v-else class="text-danger fw-bold"> -> Incompleta 🫣</small>
@@ -51,8 +51,9 @@ export default {
   name: 'HelloWorld',
   data() {
     return {
+      newTasks : "",
       texto: "VUE",
-      tareas: [
+      tasks: [
 
         {
           title: "Aprender PHP",
@@ -69,11 +70,16 @@ export default {
       ]
     }
   },
-  methods: {
-    reverse : function( ) {
-      this.texto = this.texto.split('').reverse().join('')
-    }
+  methods:{
+    addTask: function () {
+    this.tasks.push({
+      title: this.newTasks,
+      completed: false
+    })
+    this.newTasks = "";
   }
+  } 
+  
 }
 </script>
 
