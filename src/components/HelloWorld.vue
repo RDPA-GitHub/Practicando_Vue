@@ -1,7 +1,10 @@
 <template>
   <div class="hello">
-    <h1 class="text-light fw-bold " v-show="texto.length > 2">Welcome
+    <h1 class="text-light fw-bold " v-if="texto.length > 2">Welcome to
       <span v-text="texto"></span>
+    </h1>
+    <h1 v-else>
+      Por favor escribe tu nombre
     </h1>
 
     <input type="text" v-model="texto"> 
