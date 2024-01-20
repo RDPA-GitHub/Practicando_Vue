@@ -2,7 +2,7 @@
   <div id="app">
     <div class="d-flex justify-content-center">
 
-      <img alt="Vue logo" src="./assets/logo.png" />
+      <img alt="Vue logo" src="./assets/logo.png" width="8%"/>
 
     </div>
 

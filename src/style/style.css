@@ -1,3 +1,5 @@
 html,body{
-  background-color: rgb(129, 211, 188);
+  background: linear-gradient(0deg, rgba(62,66,67,1) 0%, rgba(49,235,183,1) 60%);
+  background-repeat: no-repeat;
+  height: 100%;
 }

@@ -5,30 +5,34 @@
       <div class="row">
         <div class="col-md-12  ">
 
-          <h1 class="text-light fw-bold text-center" v-if="texto.length > 2">Welcome to
-            <span class="" v-text="texto"></span>
-          </h1>
-          <h1 class="text-center" v-else>
-            Por favor escribe tu nombre
-          </h1>
+          <h3 class="text-secondary fw-bold text-center mt-4" v-text="texto">
+          </h3>
 
-          <div  class=" mb-4 d-flex justify-content-center align-items-center " >
+          <div class=" mb-4 d-flex justify-content-center align-items-center ">
 
-            <input type="text" class="form-control w-25 me-2" v-model="newTasks">
-            <button @click="addTask" class="btn btn-success fw-bold fs-5 py-1">+</button>
+            <input v-on:keyup.enter="addTask" type="text" class="form-control w-25 me-2" v-model="newTasks">
+            <!-- <button @click="addTask" class="btn btn-success fw-bold fs-5 py-1">+</button> -->
           </div>
 
 
-          <h2 class="fw-bold text-center">
+          <p class="fw-bold text-center fs-4 ">
             Listas de Tareas
-          </h2>
+          </p>
 
           <div class="d-flex justify-content-center">
             <ol class="text-light">
-              <li class="fw-bold" v-for="({ title, completed }, i) in tasks" :key="i">
+              <li class="fw-bold d-flex justify-content-between" v-for="({ title, completed }, i) in tasks" :key="i">
                 <span v-text="title"></span>
-                <small v-if="completed" class="text-success fw-bold"> -> Completa 😃</small>
-                <small v-else class="text-danger fw-bold"> -> Incompleta 🫣</small>
+                <div class="form-check ms-4">
+
+                  <input v-if="completed" @click="tasks[i].completed = false" type="checkbox"
+                    class="form-check-input bg-info inputCheck" checked>
+
+                  <input v-else @click="tasks[i].completed = true" type="checkbox"
+                    class="form-check-input bg-light inputCheck">
+
+                </div>
+
               </li>
             </ol>
           </div>
@@ -51,8 +55,8 @@ export default {
   name: 'HelloWorld',
   data() {
     return {
-      newTasks : "",
-      texto: "VUE",
+      newTasks: "",
+      texto: "Agregando Tareas con VUE.js",
       tasks: [
 
         {
@@ -70,18 +74,31 @@ export default {
       ]
     }
   },
-  methods:{
+  methods: {
     addTask: function () {
-    this.tasks.push({
-      title: this.newTasks,
-      completed: false
-    })
-    this.newTasks = "";
+      this.newTasks.length > 0
+        ? (
+          this.tasks.push({
+            title: this.newTasks,
+            completed: false
+          }),
+          this.newTasks = "")
+        :
+        alert('La tarea no puede estar vacia');
+
+      console.log(this.tasks);
+    }
   }
-  } 
-  
+
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style scoped>
+h3 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.inputCheck {
+  cursor: pointer;
+}</style>
