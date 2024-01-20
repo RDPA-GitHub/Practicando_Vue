@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
-    <h1 class="text-light fw-bold " v-text="'Probando ' + texto"></h1>
+    <h1 class="text-light fw-bold " v-show="texto.length > 2">Welcome
+      <span v-text="texto"></span>
+    </h1>
 
     <input type="text" v-model="texto"> 
     
