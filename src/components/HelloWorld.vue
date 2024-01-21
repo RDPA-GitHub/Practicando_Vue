@@ -14,6 +14,10 @@
             <!-- <button @click="addTask" class="btn btn-success fw-bold fs-5 py-1">+</button> -->
           </div>
 
+          <div class="fw-bold text-light">
+            Numeros:
+            <span class="text-success"> {{ reverseTask }}</span>
+          </div>
 
           <p class="fw-bold text-center fs-4 ">
             Listas de Tareas
@@ -91,6 +95,11 @@ export default {
         alert('La tarea no puede estar vacia');
 
       console.log(this.tasks);
+    }
+  },
+  computed: {
+    reverseTask: function(){
+      return this.newTasks.split('').reverse().join('');
     }
   }
 
