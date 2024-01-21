@@ -43,6 +43,10 @@
       </div>
     </div>
 
+    <pre class="text-light fw-bold">
+    {{ $data }}
+    </pre>
+
 
 
   </div>
