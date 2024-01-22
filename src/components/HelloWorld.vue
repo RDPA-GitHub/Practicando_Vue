@@ -24,6 +24,11 @@
             <span class="text-success"> {{ IncompletedTasks }}</span>
           </div>
 
+          <div class="fw-bold">
+            Total Tareas:
+            <span class="text-success"> {{ Totales }}</span>
+          </div>
+
           <p class="fw-bold text-center fs-4 ">
             Listas de Tareas
           </p>
@@ -105,7 +110,7 @@ export default {
   computed: {
 
     completedTasks: function() {
-      
+
       console.log('Completado');
 
       return this.tasks.filter((task) => {
@@ -120,6 +125,10 @@ export default {
         return !task.completed;
       }).length;
     },
+
+    Totales: function () {
+      return this.tasks.length;
+    }
   }
 
 }
