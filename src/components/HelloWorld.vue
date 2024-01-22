@@ -14,9 +14,14 @@
             <!-- <button @click="addTask" class="btn btn-success fw-bold fs-5 py-1">+</button> -->
           </div>
 
-          <div class="fw-bold text-light">
-            Numeros:
-            <span class="text-success"> {{ reverseTask }}</span>
+          <div class="fw-bold">
+            Completos:
+            <span class="text-success"> {{ completedTasks() }}</span>
+          </div>
+
+          <div class="fw-bold">
+            Incompletos:
+            <span class="text-success"> {{ IncompletedTasks() }}</span>
           </div>
 
           <p class="fw-bold text-center fs-4 ">
@@ -47,9 +52,9 @@
       </div>
     </div>
 
-    <pre class="text-light fw-bold">
+    <!-- <pre class="text-light fw-bold">
     {{ $data }}
-    </pre>
+    </pre> -->
 
 
 
@@ -65,6 +70,22 @@ export default {
     return {
       newTasks: "",
       texto: "Agregando Tareas con VUE.js",
+      completedTasks : () => {
+
+        console.log('Completada');
+
+        return this.tasks.filter((task) => {
+          return task.completed;
+        }).length;
+      },
+      IncompletedTasks : () => {
+
+        console.log('No Completada');
+
+        return this.tasks.filter((task) => {
+          return !task.completed;
+        }).length;
+      },
       tasks: [
 
         {
@@ -97,11 +118,11 @@ export default {
       console.log(this.tasks);
     }
   },
-  computed: {
+  /* computed: {
     reverseTask: function(){
       return this.newTasks.split('').reverse().join('');
-    }
-  }
+    } 
+  }*/
 
 }
 </script>
