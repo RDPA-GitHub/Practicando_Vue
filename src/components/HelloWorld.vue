@@ -16,12 +16,12 @@
 
           <div class="fw-bold">
             Completos:
-            <span class="text-success"> {{ completedTasks() }}</span>
+            <span class="text-success"> {{ completedTasks }}</span>
           </div>
 
           <div class="fw-bold">
             Incompletos:
-            <span class="text-success"> {{ IncompletedTasks() }}</span>
+            <span class="text-success"> {{ IncompletedTasks }}</span>
           </div>
 
           <p class="fw-bold text-center fs-4 ">
@@ -70,22 +70,6 @@ export default {
     return {
       newTasks: "",
       texto: "Agregando Tareas con VUE.js",
-      completedTasks : () => {
-
-        console.log('Completada');
-
-        return this.tasks.filter((task) => {
-          return task.completed;
-        }).length;
-      },
-      IncompletedTasks : () => {
-
-        console.log('No Completada');
-
-        return this.tasks.filter((task) => {
-          return !task.completed;
-        }).length;
-      },
       tasks: [
 
         {
@@ -118,11 +102,25 @@ export default {
       console.log(this.tasks);
     }
   },
-  /* computed: {
-    reverseTask: function(){
-      return this.newTasks.split('').reverse().join('');
-    } 
-  }*/
+  computed: {
+
+    completedTasks: function() {
+      
+      console.log('Completado');
+
+      return this.tasks.filter((task) => {
+        return task.completed;
+      }).length;
+    },
+    IncompletedTasks: function(){
+
+      console.log('No Completado');
+
+      return this.tasks.filter((task) => {
+        return !task.completed;
+      }).length;
+    },
+  }
 
 }
 </script>
@@ -135,4 +133,5 @@ h3 {
 
 .inputCheck {
   cursor: pointer;
-}</style>
+}
+</style>
