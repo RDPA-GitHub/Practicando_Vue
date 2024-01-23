@@ -43,7 +43,7 @@
                     class="form-check-input bg-info inputCheck" checked>
 
                   <input v-else @click="tasks[i].completed = true" type="checkbox"
-                    class="form-check-input bg-light inputCheck">
+                    class="bg-light form-check-input inputCheck">
 
                 </div>
 
