@@ -15,12 +15,12 @@
           </div>
 
           <div class="fw-bold">
-            Completos:
+            Tareas Completos:
             <span class="text-success"> {{ completedTasks }}</span>
           </div>
 
           <div class="fw-bold">
-            Incompletos:
+            Tareas Incompletos:
             <span class="text-success"> {{ IncompletedTasks }}</span>
           </div>
 
