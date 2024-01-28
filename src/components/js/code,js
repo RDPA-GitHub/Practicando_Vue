@@ -1,5 +1,8 @@
+
+
 export default {
   name: 'HelloWorld',
+ 
   data() {
     return {
       newTasks: "",
@@ -58,6 +61,10 @@ export default {
     Totales: function () {
       return this.tasks.length;
     }
+  },
+
+  components: {
+    'user': UserComponent
   }
 
 }

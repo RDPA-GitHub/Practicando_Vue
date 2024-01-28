@@ -8,6 +8,8 @@
           <h3 class="text-secondary fw-bold text-center mt-4" v-text="texto">
           </h3>
 
+          <user></user>
+
           <div class=" mb-4 d-flex justify-content-center align-items-center ">
 
             <input v-on:keyup.enter="addTask" type="text" class="form-control w-25 me-2" v-model="newTasks">
@@ -60,7 +62,8 @@
   </div>
 </template>
 
-<script src="./js/code,js"></script>
+<script src="./js/code.js"></script>
+
 <style scoped>
 h3 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
