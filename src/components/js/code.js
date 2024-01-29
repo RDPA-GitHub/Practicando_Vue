@@ -61,10 +61,7 @@ export default {
     Totales: function () {
       return this.tasks.length;
     }
-  },
-
-  components: {
-    'user': UserComponent
   }
+
 
 }

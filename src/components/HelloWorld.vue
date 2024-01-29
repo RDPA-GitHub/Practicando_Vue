@@ -1,19 +1,17 @@
 <template>
   <div class="hello">
 
-    <div class="container">
+    <!-- <div class="container">
       <div class="row">
         <div class="col-md-12  ">
 
           <h3 class="text-secondary fw-bold text-center mt-4" v-text="texto">
           </h3>
 
-          <user></user>
-
           <div class=" mb-4 d-flex justify-content-center align-items-center ">
 
             <input v-on:keyup.enter="addTask" type="text" class="form-control w-25 me-2" v-model="newTasks">
-            <!-- <button @click="addTask" class="btn btn-success fw-bold fs-5 py-1">+</button> -->
+           
           </div>
 
           <div class="fw-bold">
@@ -57,7 +55,9 @@
 
         </div>
       </div>
-    </div>
+    </div> -->
+
+    <user></user>
 
   </div>
 </template>
