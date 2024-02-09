@@ -1,8 +1,10 @@
-
+import MiComponent from '../MiComponent.vue';
 
 export default {
   name: 'HelloWorld',
- 
+  components: {
+    MiComponent
+  },
   data() {
     return {
       newTasks: "",

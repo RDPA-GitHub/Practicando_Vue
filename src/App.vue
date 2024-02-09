@@ -9,6 +9,7 @@
     <div class="">
 
       <HelloWorld />
+      <MiComponent />
     </div>
     
     
@@ -18,13 +19,13 @@
 
 <script>
   import HelloWorld from './components/HelloWorld.vue'
-
+  import MiComponent from './components/MiComponent.vue'
  
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld, MiComponent
   }
 }
 </script>

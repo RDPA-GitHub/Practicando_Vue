@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
 
-    <!-- <div class="container">
+    <div class="container">
       <div class="row">
         <div class="col-md-12  ">
 
@@ -51,18 +51,16 @@
             </ol>
           </div>
 
-
+          <MiComponent></MiComponent>
 
         </div>
       </div>
-    </div> -->
-
-    <user></user>
-
+    </div>
   </div>
 </template>
 
-<script src="./js/code.js"></script>
+<script src="./js/code.js">
+</script>
 
 <style scoped>
 h3 {

@@ -1,6 +1,6 @@
 <template>
 
-  <div id="mi-componente">
+  <div id="micomponent">
     <h1>Mi Componente</h1>
     <h2>{{ texto }}</h2>
   </div>
@@ -9,7 +9,7 @@
 
 <script>
   export default {
-    name: 'MiComponente',
+    name: 'MiComponent',
     data () {
       return {
         texto: 'Este es mi nuevo componente'
